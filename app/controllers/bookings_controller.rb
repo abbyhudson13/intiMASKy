@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.mask = @mask
     @booking.user = current_user
-    # It has to be this way because of the way flatpicker works with the dates"
+    # It has to be this way because of the way flatpicker works with the dates to not conflict"
     @booking.start_date = params[:booking][:start_date].split("to")[0].strip
     @booking.end_date = params[:booking][:start_date].split("to")[1].strip
       if @booking.save
